@@ -14,32 +14,40 @@ import UIKit
 
 protocol ListBeerBusinessLogic {
     func requestBeers()
-    func beerSelectTap(_ beer: ListBeer.Beer)
+    func beerSelectTap(request: ListBeer.Select.Request)
 }
 
 protocol ListBeerDataStore {
-    var beerSelected: ListBeer.Beer? { get }
+    var beerSelected: Beer? { get }
+    var listBeer: [Beer] { get }
 }
 
 class ListBeerInteractor: ListBeerBusinessLogic, ListBeerDataStore {
     var presenter: ListBeerPresentationLogic?
     var worker: ListBeerWorker?
-    var beerSelected: ListBeer.Beer?
+    var beerSelected: Beer?
+    var listBeer: [Beer] = []
+    
     //MARK: ListBeerBusinessLogic
     
     func requestBeers() {
         worker = ListBeerWorker()
         worker?.requestBeers(completion: { (response) in
-            var viewModel = ListBeer.FetchBeer.ViewModel(listBeer: [])
-            if let listBeers = response {
-                viewModel = ListBeer.FetchBeer.ViewModel(listBeer: listBeers.listBeer)
+            guard let response = response else {
+                self.presenter?.presentListBeers(response: ListBeer.FetchBeer.Response(listBeer: []))
+                return
             }
-            self.presenter?.presentListBeers(viewModel: viewModel)
+            self.listBeer = response.listBeer
+            self.presenter?.presentListBeers(response: response)
+            
         })
     }
     
-    func beerSelectTap(_ beer: ListBeer.Beer){
-        self.beerSelected = beer
-        presenter?.presentDetailBeer()
+    func beerSelectTap(request: ListBeer.Select.Request) {
+        let idx = request.idx
+        if idx < listBeer.count {
+            self.beerSelected = listBeer[idx]
+            presenter?.presentDetailBeer()
+        }
     }
 }

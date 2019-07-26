@@ -13,7 +13,7 @@
 import UIKit
 
 protocol ListBeerPresentationLogic {
-    func presentListBeers(viewModel: ListBeer.FetchBeer.ViewModel)
+    func presentListBeers(response: ListBeer.FetchBeer.Response)
     func presentDetailBeer()
 }
 
@@ -21,7 +21,17 @@ class ListBeerPresenter: ListBeerPresentationLogic {
     weak var viewController: ListBeerDisplayLogic?
     
     
-    func presentListBeers(viewModel: ListBeer.FetchBeer.ViewModel){
+    func presentListBeers(response: ListBeer.FetchBeer.Response) {
+        var displayedBeers: [ListBeer.FetchBeer.ViewModel.BeerResumed] = []
+        for beer in response.listBeer {
+            let name = beer.name ?? "-"
+            let abv = beer.abv != nil ? "abv: \(String(describing: beer.abv!))%" : ""
+            let beerResumed = ListBeer.FetchBeer.ViewModel.BeerResumed(imageUrl: beer.imageURL,
+                                                                       name: name,
+                                                                       abv: abv)
+            displayedBeers.append(beerResumed)
+        }
+        let viewModel = ListBeer.FetchBeer.ViewModel(listBeer: displayedBeers)
         viewController?.displayListBeers(viewModel: viewModel)
     }
     func presentDetailBeer(){

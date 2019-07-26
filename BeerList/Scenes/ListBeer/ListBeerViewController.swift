@@ -74,9 +74,9 @@ class ListBeerViewController: UIViewController, ListBeerDisplayLogic {
         self.collectionView.register(UINib(nibName: "BeerCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "BeerCollectionViewCell")
     }
     
-    // MARK: Do something
+    // MARK: ListBeerDisplayLogic
     
-    var displayedBeers: [ListBeer.Beer] = []
+    var displayedBeers: [ListBeer.FetchBeer.ViewModel.BeerResumed] = []
     
     func requestBeers() {
         activityIndicator.startAnimating()
@@ -100,21 +100,20 @@ extension ListBeerViewController : UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell : BeerCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "BeerCollectionViewCell", for: indexPath) as! BeerCollectionViewCell
-        let beer = displayedBeers[indexPath.row]
-        cell.setup(beer.name, image: beer.imageURL)
+        cell.setup(beer : displayedBeers[indexPath.row])
         return cell
     }
 }
 extension ListBeerViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = UIScreen.main.bounds.width / 2 - 6.0 //Margin
-        return CGSize(width: width, height: 220)
+        return CGSize(width: width, height: 270)
     }
 }
 
 extension ListBeerViewController : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let beer = displayedBeers[indexPath.row]
-        interactor?.beerSelectTap(beer)
+        let request = ListBeer.Select.Request(idx: indexPath.row)
+        interactor?.beerSelectTap(request: request)
     }
 }

@@ -12,33 +12,21 @@ class BeerCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var abvLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-    func setup(_ txt: String?, image: String?){
+    func setup(beer: ListBeer.FetchBeer.ViewModel.BeerResumed){
         
-        imageView.image = #imageLiteral(resourceName: "beer_mask")
-        titleLabel.text = txt
+        imageView?.image = #imageLiteral(resourceName: "beer_mask")
+        titleLabel?.text = beer.name
+        abvLabel?.text = beer.abv
         layoutIfNeeded()
-        getImageBackground(image)
-    }
-    
-    private func getImageBackground(_ urlString: String?){
-        if let urlString = urlString,
-            let url = URL(string: urlString){
-            DispatchQueue.global().async {
-                let data = try? Data(contentsOf: url)
-                if let data = data, let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        self.imageView.image = image
-                    }
-                }
-            }
-        }
-        
-        
+        beer.imageUrl?.loadImageWithUrlString(completion: { (image) in
+            self.imageView?.image = image
+        })
     }
 
 }

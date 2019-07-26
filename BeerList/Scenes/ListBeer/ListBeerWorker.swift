@@ -29,7 +29,7 @@ class ListBeerWorker {
                     return
                 }
                 do {
-                    let listBeers =  try JSONDecoder().decode(Array<ListBeer.Beer>.self, from: data)
+                    let listBeers =  try JSONDecoder().decode(Array<Beer>.self, from: data)
                     let response = ListBeer.FetchBeer.Response(listBeer: listBeers)
                     completion(response)
                 } catch {

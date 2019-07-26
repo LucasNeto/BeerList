@@ -13,17 +13,23 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BeerCollectionViewCell" customModule="BeerList" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BeerCollectionViewCell" id="gTV-IL-0wX" customClass="BeerCollectionViewCell" customModule="BeerList" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="146" height="220"/>
+            <rect key="frame" x="0.0" y="0.0" width="147" height="275"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="146" height="220"/>
+                <rect key="frame" x="0.0" y="0.0" width="147" height="275"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mgd-Ro-xIX">
-                        <rect key="frame" x="8" y="8" width="130" height="167.5"/>
+                        <rect key="frame" x="8" y="8" width="131" height="194"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XSO-07-KOf">
-                        <rect key="frame" x="8" y="191.5" width="130" height="20.5"/>
+                        <rect key="frame" x="8" y="218" width="131" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ve-zx-GTG" userLabel="Teor">
+                        <rect key="frame" x="8" y="246.5" width="131" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -34,19 +40,23 @@
                 <constraint firstItem="mgd-Ro-xIX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="6us-Fb-Se7"/>
                 <constraint firstAttribute="trailing" secondItem="XSO-07-KOf" secondAttribute="trailing" constant="8" id="M7h-p5-UaB"/>
                 <constraint firstItem="XSO-07-KOf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="N6K-5A-hO2"/>
+                <constraint firstAttribute="trailing" secondItem="9Ve-zx-GTG" secondAttribute="trailing" constant="8" id="S4J-k5-ILl"/>
                 <constraint firstItem="XSO-07-KOf" firstAttribute="top" secondItem="mgd-Ro-xIX" secondAttribute="bottom" constant="16" id="WNj-3j-Gkn"/>
+                <constraint firstItem="9Ve-zx-GTG" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="aEj-US-Lcr"/>
+                <constraint firstItem="9Ve-zx-GTG" firstAttribute="top" secondItem="XSO-07-KOf" secondAttribute="bottom" constant="8" id="fwS-MZ-Is5"/>
                 <constraint firstItem="mgd-Ro-xIX" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="l5c-68-eCt"/>
-                <constraint firstAttribute="bottom" secondItem="XSO-07-KOf" secondAttribute="bottom" constant="8" id="mSV-43-Ra9"/>
+                <constraint firstAttribute="bottom" secondItem="9Ve-zx-GTG" secondAttribute="bottom" constant="8" id="pFg-JK-57l"/>
                 <constraint firstAttribute="trailing" secondItem="mgd-Ro-xIX" secondAttribute="trailing" constant="8" id="qJH-OJ-qZu"/>
                 <constraint firstItem="mgd-Ro-xIX" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="zRm-Ug-3SJ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="146" height="220"/>
+            <size key="customSize" width="147" height="275"/>
             <connections>
+                <outlet property="abvLabel" destination="9Ve-zx-GTG" id="w72-QC-cNN"/>
                 <outlet property="imageView" destination="mgd-Ro-xIX" id="NOt-PU-nbj"/>
                 <outlet property="titleLabel" destination="XSO-07-KOf" id="rqo-kI-ddV"/>
             </connections>
-            <point key="canvasLocation" x="207.24637681159422" y="201.5625"/>
+            <point key="canvasLocation" x="207.97101449275365" y="219.97767857142856"/>
         </collectionViewCell>
     </objects>
 </document>
