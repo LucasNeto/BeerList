@@ -25,6 +25,7 @@ class ListBeerViewController: UIViewController, ListBeerDisplayLogic {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var tryAgainBtn: UIButton!
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -72,6 +73,7 @@ class ListBeerViewController: UIViewController, ListBeerDisplayLogic {
     private func setupView(){
         self.activityIndicator.hidesWhenStopped = true
         self.collectionView.register(UINib(nibName: "BeerCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "BeerCollectionViewCell")
+        tryAgainBtn.layer.cornerRadius = 10
     }
     
     // MARK: ListBeerDisplayLogic
@@ -87,6 +89,7 @@ class ListBeerViewController: UIViewController, ListBeerDisplayLogic {
         activityIndicator.stopAnimating()
         displayedBeers = viewModel.listBeer
         collectionView.reloadData()
+        tryAgainBtn.isHidden = viewModel.listBeer.count > 0
     }
     
     func displayDetailBeer(){

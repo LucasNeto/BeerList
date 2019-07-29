@@ -24,15 +24,14 @@ protocol ListBeerDataStore {
 
 class ListBeerInteractor: ListBeerBusinessLogic, ListBeerDataStore {
     var presenter: ListBeerPresentationLogic?
-    var worker: ListBeerWorker?
+    var worker = ListBeerWorker()
     var beerSelected: Beer?
     var listBeer: [Beer] = []
     
     //MARK: ListBeerBusinessLogic
     
     func requestBeers() {
-        worker = ListBeerWorker()
-        worker?.requestBeers(completion: { (response) in
+        worker.requestBeers(completion: { (response) in
             guard let response = response else {
                 self.presenter?.presentListBeers(response: ListBeer.FetchBeer.Response(listBeer: []))
                 return

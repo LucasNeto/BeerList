@@ -13,7 +13,7 @@
         <!--ListBeer-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ListBeerViewController" customModule="BeerList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListBeerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ListBeerViewController" customModule="BeerList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,11 +49,24 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="z4t-54-rUU">
                                 <rect key="frame" x="197" y="465" width="20" height="20"/>
                             </activityIndicatorView>
+                            <button hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xej-hg-VpL">
+                                <rect key="frame" x="122.5" y="420.5" width="169" height="55"/>
+                                <color key="backgroundColor" red="0.72716981172561646" green="0.50995582342147827" blue="0.17635425925254822" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="Und-dw-N3y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                <state key="normal" title="Tentar novamente"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Xej-hg-VpL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2La-Tn-WcL"/>
                             <constraint firstItem="z4t-54-rUU" firstAttribute="centerX" secondItem="uq2-SD-1sa" secondAttribute="centerX" id="33D-1H-5mq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uq2-SD-1sa" secondAttribute="trailing" id="8lx-fB-1Nl"/>
+                            <constraint firstItem="Xej-hg-VpL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FRZ-ag-njk"/>
                             <constraint firstItem="z4t-54-rUU" firstAttribute="centerY" secondItem="uq2-SD-1sa" secondAttribute="centerY" id="OBo-DR-lm1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uq2-SD-1sa" secondAttribute="bottom" id="VZB-u4-MYQ"/>
                             <constraint firstItem="uq2-SD-1sa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YfK-Kq-b6a"/>
@@ -65,6 +78,7 @@
                     <connections>
                         <outlet property="activityIndicator" destination="z4t-54-rUU" id="lVo-cE-uVj"/>
                         <outlet property="collectionView" destination="uq2-SD-1sa" id="V80-0B-rzN"/>
+                        <outlet property="tryAgainBtn" destination="Xej-hg-VpL" id="fwy-qn-HHX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
