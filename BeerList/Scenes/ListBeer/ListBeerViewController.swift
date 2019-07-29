@@ -71,9 +71,9 @@ class ListBeerViewController: UIViewController, ListBeerDisplayLogic {
         requestBeers()
     }
     private func setupView(){
-        self.activityIndicator.hidesWhenStopped = true
-        self.collectionView.register(UINib(nibName: "BeerCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "BeerCollectionViewCell")
-        tryAgainBtn.layer.cornerRadius = 10
+        self.activityIndicator?.hidesWhenStopped = true
+        self.collectionView?.register(UINib(nibName: "BeerCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "BeerCollectionViewCell")
+        tryAgainBtn?.layer.cornerRadius = 10
     }
     
     // MARK: ListBeerDisplayLogic
@@ -81,15 +81,15 @@ class ListBeerViewController: UIViewController, ListBeerDisplayLogic {
     var displayedBeers: [ListBeer.FetchBeer.ViewModel.BeerResumed] = []
     
     func requestBeers() {
-        activityIndicator.startAnimating()
+        activityIndicator?.startAnimating()
         interactor?.requestBeers()
     }
     
     func displayListBeers(viewModel: ListBeer.FetchBeer.ViewModel){
-        activityIndicator.stopAnimating()
+        activityIndicator?.stopAnimating()
         displayedBeers = viewModel.listBeer
-        collectionView.reloadData()
-        tryAgainBtn.isHidden = viewModel.listBeer.count > 0
+        collectionView?.reloadData()
+        tryAgainBtn?.isHidden = viewModel.listBeer.count > 0
     }
     
     func displayDetailBeer(){

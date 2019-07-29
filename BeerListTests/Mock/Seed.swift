@@ -36,5 +36,14 @@ struct Seeds {
                                                                                   abv: "abv: 4.1%")
         
         static let listResumed = [buzzResumed,trashyBlondeResumed]
+        
+        
+        static let buzzDetailed = DetailBeer.Show.ViewModel.BeerDetailed(imageUrl: "https://images.punkapi.com/v2/keg.png",
+                                                                         name: "Buzz",
+                                                                         tagline: "A Real Bitter Experience.",
+                                                                         abv: "4.5%",
+                                                                         ibu: "60.0/100",
+                                                                         description: "A light, crisp and bitter IPA brewed with English and American hops. A small batch brewed only once.")
+        
     }
 }

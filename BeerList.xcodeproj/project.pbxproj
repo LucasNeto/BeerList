@@ -32,6 +32,7 @@
 		D7CBC14022ECD12A0074E77F /* ListBeerInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CBC13F22ECD12A0074E77F /* ListBeerInteractorTests.swift */; };
 		D7CBC14422ECDA0C0074E77F /* DetailBeerInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CBC14322ECDA0C0074E77F /* DetailBeerInteractorTests.swift */; };
 		D7CBC14622ECDBA10074E77F /* ListBeerViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CBC14522ECDBA10074E77F /* ListBeerViewControllerTests.swift */; };
+		D7CBC14822EE9DA60074E77F /* DetailBeerViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CBC14722EE9DA60074E77F /* DetailBeerViewControllerTests.swift */; };
 		E42F537CA705EA1FFCBA6C49 /* libPods-BeerList.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B53A30EE78CC87A30CC977A /* libPods-BeerList.a */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +81,7 @@
 		D7CBC13F22ECD12A0074E77F /* ListBeerInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBeerInteractorTests.swift; sourceTree = "<group>"; };
 		D7CBC14322ECDA0C0074E77F /* DetailBeerInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBeerInteractorTests.swift; sourceTree = "<group>"; };
 		D7CBC14522ECDBA10074E77F /* ListBeerViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBeerViewControllerTests.swift; sourceTree = "<group>"; };
+		D7CBC14722EE9DA60074E77F /* DetailBeerViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBeerViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				D7CBC14322ECDA0C0074E77F /* DetailBeerInteractorTests.swift */,
+				D7CBC14722EE9DA60074E77F /* DetailBeerViewControllerTests.swift */,
 			);
 			path = DetailBeer;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				D7CBC14622ECDBA10074E77F /* ListBeerViewControllerTests.swift in Sources */,
 				D7CBC14022ECD12A0074E77F /* ListBeerInteractorTests.swift in Sources */,
 				D7CBC14422ECDA0C0074E77F /* DetailBeerInteractorTests.swift in Sources */,
+				D7CBC14822EE9DA60074E77F /* DetailBeerViewControllerTests.swift in Sources */,
 				D7CBC13C22ECCF3E0074E77F /* Seed.swift in Sources */,
 				D7AB7A6E22E8023900944697 /* BeerListTests.swift in Sources */,
 			);
