@@ -85,11 +85,11 @@
             </objects>
             <point key="canvasLocation" x="686.95652173913049" y="101.78571428571428"/>
         </scene>
-        <!--Detail Beer View Controller-->
+        <!--Detail-->
         <scene sceneID="iyZ-Ml-TqE">
             <objects>
-                <viewController storyboardIdentifier="DetailBeerViewController" id="efx-J8-xOy" customClass="DetailBeerViewController" customModule="BeerList" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="FJp-M6-rfy">
+                <viewController storyboardIdentifier="DetailBeerViewController" title="Detail" id="efx-J8-xOy" customClass="DetailBeerViewController" customModule="BeerList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FJp-M6-rfy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
